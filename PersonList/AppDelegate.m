@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PersonViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    //makeing a nav controller and setting it to the rootViewController
+    PersonViewController *viewController = [PersonViewController new];
+    UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    
+    
+    //setting the tltle for the view controller.
+    viewController.title = @"Names";
+    
+    
+    //making navController the rootView
+    self.window.rootViewController = navController;
+    
     return YES;
 }
 
